@@ -1,0 +1,48 @@
+{
+  "VehicleRequest": {
+    "type": "object",
+    "required": [
+      "carrierId",
+      "regNumber"
+    ],
+    "properties": {
+      "capacityId": {
+        "type": "integer",
+        "format": "int32",
+        "maxValue": 999
+      },
+      "carrierId": {
+        "type": "integer",
+        "format": "int64",
+        "maximum": 9999999999999999
+      },
+      "garageNumber": {
+        "type": "string",
+        "example": "A18BC",
+        "minLength": 1,
+        "maxLength": 5
+      },
+      "hasTurnstile": {
+        "type": "boolean"
+      },
+      "mintransId": {
+        "type": "integer",
+        "format": "int32",
+        "maximum": 999999
+      },
+      "regNumber": {
+        "type": "string",
+        "example": "А340ВА154",
+        "pattern": ["latin", "digits"],
+        "minLength": 1,
+        "maxLength": 10
+      },
+      "type": {
+        "type": "string",
+        "pattern": ["Автобус", "Троллейбус", "Трамвай"]
+      }
+    },
+    "title": "VehicleRequest",
+    "description": "Информация о транспортном средстве в запросе на создание"
+  }
+}
